@@ -77,4 +77,33 @@ describe('Component TripSummary', () => {
   it('Should throw error without required props', () => {
     expect(() => shallow(<TripSummary tags={[]} />)).toThrow();
   });
+  // 19.2.5
+  it('Should render tags in correct order', () => {
+    const expectedTags = ['one', 'two', 'three'];
+    const component = shallow(
+      <TripSummary
+        tags={expectedTags}
+        id=""
+        cost=""
+        days={0}
+        image=""
+        name=""
+      />
+    );
+    expect(
+      component.find('.tag').map((tag, index) => {
+        tag.text() === expectedTags[index];
+      })
+    ).toBeTruthy();
+  });
+  it('Should not render if tags array is empty or undefined', () => {
+    const tagsEmpty = shallow(
+      <TripSummary tags={[]} id="" cost="" days={0} image="" name="" />
+    );
+    const tagsUndefined = shallow(
+      <TripSummary id="" cost="" days={0} image="" name="" />
+    );
+    expect(tagsEmpty.find('.tags').length === 0).toBeTruthy();
+    expect(tagsUndefined.find('.tags').length === 0).toBeTruthy();
+  });
 });
