@@ -1,0 +1,18 @@
+{
+  "orders": [
+    {
+      "car-rental": "luxury",
+      "accommodation": "house",
+      "features": ["security"],
+      "adults": "9",
+      "children": "6",
+      "name": "name",
+      "contact": "contact",
+      "start-date": "2021-02-14T23:00:00.000Z",
+      "id": "5cc1d10181a30e85c8d9ad4a",
+      "tripName": "Pleasant trek in outstanding Togo",
+      "countryCode": "TGO",
+      "totalCost": "$391,427"
+    }
+  ]
+}
