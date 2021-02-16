@@ -3,9 +3,6 @@ import styles from './OrderOption.scss';
 import PropTypes from 'prop-types';
 
 const OrderOptionText = ({ currentValue, setOptionValue }) => {
-  {
-    console.log(currentValue);
-  }
   return (
     <div>
       <input
