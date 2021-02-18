@@ -1,16 +1,18 @@
 import React from 'react';
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-const HappyHourAd = () => {
+const HappyHourAd = ({ title, countdown }) => {
   return (
     <div>
-      <h3 className="title">Happy Hour</h3>
-      <div className="countdown">countdown</div>
+      <h3 className="title">{title}</h3>
+      <div className="countdown">{countdown}</div>
     </div>
   );
 };
 
-// HappyHourAd.propTypes = {
-// }
+HappyHourAd.propTypes = {
+  title: PropTypes.string,
+  countdown: PropTypes.string,
+};
 
 export default HappyHourAd;
