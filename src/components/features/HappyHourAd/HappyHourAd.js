@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const HappyHourAd = ({ title }) => {
-  const getCountdownTime = () => {
+class HappyHourAd extends Component {
+  constructor(props) {
+    super(props);
+
+    setInterval(() => {
+      this.forceUpdate();
+    }, 1000);
+  }
+
+  static propTypes = {
+    title: PropTypes.string,
+  };
+
+  getCountdownTime = () => {
     const currentTime = new Date();
     const nextNoon = new Date(
       Date.UTC(
@@ -22,16 +34,16 @@ const HappyHourAd = ({ title }) => {
 
     return Math.round((nextNoon.getTime() - currentTime.getTime()) / 1000);
   };
-  return (
-    <div>
-      <h3 className="title">{title}</h3>
-      <div className="countdown">{getCountdownTime()}</div>
-    </div>
-  );
-};
 
-HappyHourAd.propTypes = {
-  title: PropTypes.string,
-};
+  render() {
+    const { title } = this.props;
+    return (
+      <div>
+        <h3 className="title">{title}</h3>
+        <div className="countdown">{this.getCountdownTime()}</div>
+      </div>
+    );
+  }
+}
 
 export default HappyHourAd;
