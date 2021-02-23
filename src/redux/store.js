@@ -1,9 +1,11 @@
 import { combineReducers, createStore } from 'redux';
 import tripList from '../data/trips.json';
+import phoneOffice from '../data/phoneOffice.json';
 
 import globalReducer from './globalRedux';
 import filtersReducer from './filtersRedux';
 import orderReducer from './orderRedux';
+import phonesReducer from './phonesRedux';
 
 // define initial state and shallow-merge initial data
 const initialState = {
@@ -25,12 +27,14 @@ const initialState = {
     email: '',
     options: {},
   },
+  phones: phoneOffice,
 };
 
 // define reducers
 const reducers = {
   filters: filtersReducer,
   order: orderReducer,
+  phones: phonesReducer,
 };
 
 // add blank reducers for initial state properties without reducers

@@ -1,0 +1,11 @@
+[
+  { "start": 8, "end": 12, "name": "Amanda", "phone": "678.243.8455" },
+  { "start": 12, "end": 16, "name": "Tobias", "phone": "678.243.8455" },
+  { "start": 16, "end": 22, "name": "Helena", "phone": "678.243.8455" },
+  {
+    "start": 22,
+    "end": 8,
+    "name": "n/a",
+    "phone": "The office opens at 8:00 UTC"
+  }
+]
